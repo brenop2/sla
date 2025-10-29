@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}403 - Acesso Proibido{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center mt-5">
+        <h1 class="display-1 text-danger">403</h1>
+        <h2 class="mb-4">Acesso Proibido!</h2>
+        <p class="lead">
+            Desculpe, você não tem as permissões necessárias para acessar esta página.
+        </p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} mt-3" role="alert">
+                    <strong>Erro de Permissão:</strong> {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg mt-3 me-2">
+            <i class="fas fa-home"></i> Voltar para Home
+        </a>
+        <a href="{{ url_for('logout') }}" class="btn btn-warning btn-lg mt-3">
+            <i class="fas fa-user-times"></i> Trocar de Usuário
+        </a>
+    </div>
+</div>
+{% endblock %}

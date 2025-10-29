@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for key, value in devices.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <p>Voltar para <a href="{{ back_url }}">Menu do {{ room_name }}</a>!</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Remover Usuário</h1>
+    <form action="{{ url_for('del_user') }}" method="post">
+        <select name="user">
+            {% for key, value in devices.items() %}
+                <option value="{{ key }}">{{ key }}</option>
+            {% endfor %}
+        </select>
+        <p><input type="submit" value="Deletar"/></p>
+    </form>
+{% endblock %}

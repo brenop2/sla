@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login IoT</title>
+    
+    <style>
+
+        /* Fundo da Página e Centralização */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; 
+            /* Propriedades Flexbox para centralização - NÃO ALTERAR */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0;
+        }
+
+        /* Container Principal do Login (Card) */
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        /* Título */
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaçamento entre os grupos de input */
+        }
+
+        
+        .input-group {
+            text-align: left;
+            line-height: 1.5; /* Espaçamento normal do texto */
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* CORREÇÃO: Garante que o <br> não adicione espaço desnecessário */
+        .input-group br {
+            display: none;
+        }
+
+        /* Estilo dos Campos de Input */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px; 
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+            font-size: 1em;
+            /* Garante que o input comece em uma nova linha visível */
+            display: block; 
+        }
+
+        .input-field:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Botão de Envio (submit) */
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2> 
+        <form method="POST" class="login-form"> 
+            <div class="input-group">
+                Usuário: <input type="text" name="user" class="input-field"><br> 
+            </div>
+            <div class="input-group">
+                Senha: <input type="password" name="password" class="input-field"><br> 
+            </div>
+            <button type="submit" class="btn-submit">Entrar</button> 
+        </form>
+    </div>
+</body>
+</html>

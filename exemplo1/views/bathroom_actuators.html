@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Atuadores do Banheiro</title>
+    </head>
+    <body>
+        <h1>Atuadores do Banheiro</h1>
+        <ul>
+            {% for key, value in devices.items() %}
+            <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+        <p>Voltar para <a href="/bathroom">Menu do Banheiro</a>!</p>
+    </body>
+</html>

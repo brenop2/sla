@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 40px;">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h1>{{ title }}</h1>
+        </div>
+        <div class="card-body">
+            <div class="list-group">
+                {% for name, url in menu_items.items() %}
+                <a href="{{ url }}" class="list-group-item list-group-item-action">
+                    {{ name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="margin-top: 20px;">
+        <a href="{{ url_for('home') }}" class="btn btn-secondary">Voltar para Home</a>
+    </div>
+</div>
+{% endblock %}
