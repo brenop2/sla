@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}429 - Muitas Requisições{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center mt-5">
+        <h1 class="display-1 text-danger">429</h1>
+        <h2 class="mb-4">Muitas Requisições!</h2>
+        <p class="lead">
+            Você fez muitas solicitações em um curto período. Aguarde um momento antes de tentar novamente.
+        </p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} mt-3" role="alert">
+                    <strong>Limite Excedido:</strong> {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg mt-3 me-2">
+            <i class="fas fa-home"></i> Voltar para Home
+        </a>
+        <a href="{{ url_for('logout') }}" class="btn btn-warning btn-lg mt-3">
+            <i class="fas fa-user-times"></i> Trocar de Usuário
+        </a>
+    </div>
+</div>
+{% endblock %}

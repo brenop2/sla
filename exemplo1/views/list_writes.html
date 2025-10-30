@@ -1,0 +1,32 @@
+<!-- list_writes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Atuações</title>
+</head>
+<body>
+    <h1>Lista de Atuações Registradas</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Atuador ID</th>
+                <th>Valor de Atuação</th>
+                <th>Data de Atuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for write in writes %}
+                <tr>
+                    <td>{{ write.id }}</td>
+                    <td>{{ write.actuators_id }}</td>
+                    <td>{{ write.value }}</td>
+                    <td>{{ write.write_datetime }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Devices</title>
+    </head>
+    <body>
+        {% block content %} {% endblock %}
+        <ul>
+            {% for key, value in devices.items() %}
+            <li>
+                {{ key }} : {{ value }}
+            </li>
+            {% endfor %}
+        </ul>
+        <p>Voltar para <a href="/home">página inicial</a>!</p>
+    </body>
+</html>
